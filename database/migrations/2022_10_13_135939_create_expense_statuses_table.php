@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('countries', function (Blueprint $table) {
+        Schema::create('expense_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255)->unique();
-            $table->string('country_code', 10)->unique();
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('countries');
+        Schema::dropIfExists('expense_statuses');
     }
 };
