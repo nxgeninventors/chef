@@ -6,5 +6,6 @@
 - https://laravel-news.com/two-best-roles-permissions-packages
 - https://spatie.be/docs/laravel-permission/v5/installation-laravel
 
+# Spatie Laravel dashboard 
 
-
+- https://spatie.be/docs/laravel-dashboard/
