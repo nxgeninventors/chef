@@ -16,10 +16,9 @@ use App\Http\Controllers\Auth\ChangePasswordController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::redirect('/', 'admin/home');
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 // Change Password Routes...
