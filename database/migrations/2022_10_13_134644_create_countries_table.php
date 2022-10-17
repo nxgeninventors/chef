@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      *
@@ -16,7 +15,11 @@ return new class extends Migration
         Schema::create('countries', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255)->unique();
-            $table->string('country_code', 10)->unique();
+            $table->string('nicename', 255);
+            $table->string('iso3', 3)->nullable();
+            $table->smallInteger('numcode')->nullable();
+            $table->string('country_code', 10);
+            $table->integer('phonecode')->nullable();
             // $table->timestamps();
         });
     }
