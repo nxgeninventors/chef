@@ -38,16 +38,15 @@ class ClientsController extends Controller
     public function store(Request $request, Client $client)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
             'email' => 'required|string|max:255',
             'mobile' => 'required|string|max:255',
-            'address_1' => 'required|string|max:255',
-            'address_2' => 'required|string|max:255',
+            'street_address' => 'required|string|max:255',
             'city' => 'required|string|max:255',
             'state' => 'required|string|max:255',
             'zip' => 'required|string|max:255',
-            'country_id' => 'required',
-            'phone' => 'required',
+            'country_id' => 'required'
         ]);
 
         $client->create($validated);
