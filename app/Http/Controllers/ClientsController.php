@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClientsController extends Controller
 {
@@ -15,8 +16,11 @@ class ClientsController extends Controller
     public function index()
     {
         return view('clients.index', [
-            'clients' => Client::with('country')->latest()->get(),
+            'clients' => DB::table('clients')->paginate(15)
         ]);
+        // return view('clients.index', [
+        //     'clients' => Client::with('country')->latest()->get(),
+        // ]);
     }
 
     /**

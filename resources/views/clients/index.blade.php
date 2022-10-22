@@ -98,5 +98,13 @@
                 </form>
             </div>
         </div>
+
+        <div class="container">
+            @foreach ($clients as $user)
+                {{ $user->first_name }}
+            @endforeach
+        </div>
+         
+        {{ $clients->links() }}
     </div>
 </x-app-layout>
