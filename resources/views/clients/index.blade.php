@@ -2,12 +2,6 @@
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
         <form method="POST" action="{{ route('clients.store') }}">
             @csrf
-            {{-- <textarea
-                name="message"
-                placeholder="{{ __('What\'s on your mind?') }}"
-                class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-            >{{ old('message') }}</textarea>
-            <x-input-error :messages="$errors->get('message')" class="mt-2" /> --}}
 
             <!-- Name -->
             <div>
@@ -116,7 +110,14 @@
                         <p class="mt-4 text-lg text-gray-900">{{ $client->email }}</p>
                         <p class="mt-4 text-lg text-gray-900">{{ $client->mobile }}</p>
                         <p class="mt-4 text-lg text-gray-900">{{ $client->phone }}</p>
-                        <p class="mt-4 text-lg text-gray-900">{{ $client->country->nicename }}</p>
+                        <p class="mt-4 text-lg text-gray-900">{{ $client->address_1 }}</p>
+                        <p class="mt-4 text-lg text-gray-900">{{ $client->address_2 }}</p>
+                        <p class="mt-4 text-lg text-gray-900">{{ $client->country_id}}</p>
+                        <p class="mt-4 text-lg text-gray-900">{{ $client->city}}</p>
+                        <p class="mt-4 text-lg text-gray-900">{{ $client->state}}</p>
+                        <p class="mt-4 text-lg text-gray-900">{{ $client->zip}}</p>
+        
+
                     </div>
                 </div>
             @endforeach
