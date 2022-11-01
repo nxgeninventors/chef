@@ -2,6 +2,8 @@
 
 <h1 align="center">Chef</h1>
 
+# nav - #1f2a37
+# body - #101928
 
 ## License
 

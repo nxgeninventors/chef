@@ -1,0 +1,4 @@
+- https://beyondco.de/blog/blade-components-for-your-layout
+- https://github.com/fireship-io/tailwind-dashboard
+- https://www.youtube.com/c/Tailwindcollections/videos
+- https://flowbite.com/

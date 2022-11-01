@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\FormsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,5 +44,8 @@ Route::get('/dashboard', function () {
 Route::resource('clients', ClientsController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
+
+Route::get('/forms', [FormsController::class, 'index']);
+Route::get('/dash', [FormsController::class, 'dash']);
 
 require __DIR__.'/auth.php';
