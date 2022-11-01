@@ -8,8 +8,7 @@ use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\TodosController;
-
-
+use App\Http\Controllers\FormsController;
 
 
 /*
@@ -49,8 +48,6 @@ Route::resource('clients', ClientsController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
-
-
 Route::get('/todos', [TodosController::class, 'index']);
 Route::post('/todos', [TodosController::class,'store']);
 Route::get('/todos/create', [TodosController::class, 'create']);
@@ -59,5 +56,9 @@ Route::get('/todos/{id}/edit', [TodosController::class, 'edit']);
 Route::post('/todos/{id}', [TodosController::class, 'update']);
 Route::get('/todos/{id}', [TodosController::class, 'destroy']);
     
+
+Route::get('/forms', [FormsController::class, 'index']);
+Route::get('/dash', [FormsController::class, 'dash']);
+
 
 require __DIR__.'/auth.php';
