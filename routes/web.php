@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\TodosController;
 use App\Http\Controllers\FormsController;
+use App\Http\Controllers\PostController;
 
 
 /*
@@ -60,5 +61,9 @@ Route::get('/todos/{id}', [TodosController::class, 'destroy']);
 Route::get('/forms', [FormsController::class, 'index']);
 Route::get('/dash', [FormsController::class, 'dash']);
 
+Route::get('posts', [PostController::class, 'index']);
+Route::post('post', [PostController::class, 'store']);
+Route::put('post', [PostController::class, 'update']);
+Route::delete('post/{post_id}', [PostController::class, 'destroy']);
 
 require __DIR__.'/auth.php';
