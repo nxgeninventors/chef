@@ -14,6 +14,9 @@ $("#createBtn").click(function(event) {
 
     var title       =       $("#title").val();
     var description =       $("#description").val();
+    var category =       $("#category").val();
+    var duration =       $("#duration").val();
+    var createdat =       $("#createdat").val();
 
     if(title == "") {
         $("#title").after('<span class="text-danger error"> Title is required </span>');
@@ -25,6 +28,20 @@ $("#createBtn").click(function(event) {
         return false;
     }
 
+    if(category == "") {
+        $("#category").after('<span class="text-danger error"> Category is required </span>');
+        return false;
+    }
+
+    if(duration == "") {
+        $("#duration").after('<span class="text-danger error"> Duration is required </span>');
+        return false;
+    }
+
+    if(createdat == "") {
+        $("#createdat").after('<span class="text-danger error"> CreatedAt is required </span>');
+        return false;
+    }
     var form_data   =       $("#postForm").serialize();
 
     // if post id exist
@@ -97,7 +114,7 @@ function updatePost(form_data) {
 
 // ---------- [ Delete post ] ----------------
 function deletePost(post_id) {
-    var status = confirm("Do you want to delete this post?");
+    var status = confirm("Do you want to delete this task?");
     if(status == true) {
         $.ajax({
             url: "post/"+post_id,
@@ -120,13 +137,16 @@ $('#addPostModal').on('shown.bs.modal', function (e) {
 var id           =   $(e.relatedTarget).data('id');
 var title        =   $(e.relatedTarget).data('title');
 var description  =   $(e.relatedTarget).data('description');
+var category     =   $(e.relatedTarget).data('category');
+var duration     =   $(e.relatedTarget).data('duration');
+var createdat    =   $(e.relatedTarget).data('createdat');
 var action       =   $(e.relatedTarget).data('action');
 
 if(action !== undefined) {
     if(action === "view") {
 
         // set modal title
-        $(".modal-title").html("Post Detail");
+        $(".modal-title").html("Task Detail");
 
         // pass data to input fields
         $("#title").attr("readonly", "true");
@@ -134,6 +154,19 @@ if(action !== undefined) {
 
         $("#description").attr("readonly", "true");
         $("#description").val(description);
+
+        $("#category").attr("readonly", "true");
+        $("#category").val(category);
+
+        $("#duration").attr("readonly", "true");
+        $("#duration").val(duration);
+
+        $("#createdat").attr("readonly", "true");
+        $("#createdat").val(createdat);
+
+
+
+
 
         // hide button
         $("#createBtn").addClass("d-none");
@@ -143,9 +176,13 @@ if(action !== undefined) {
     if(action === "edit") {
         $("#title").removeAttr("readonly");
         $("#description").removeAttr("readonly");
+        $("#category").removeAttr("readonly");
+        $("#duration").removeAttr("readonly");
+        $("#createdat").removeAttr("readonly");
+
 
         // set modal title
-        $(".modal-title").html("Update Post");
+        $(".modal-title").html("Update Task");
 
         $("#createBtn").text("Update");
 
@@ -153,6 +190,9 @@ if(action !== undefined) {
          $("#id_hidden").val(id);
          $("#title").val(title);
          $("#description").val(description);
+         $("#category").val(category);
+         $("#duration").val(duration);
+         $("#createdat").val(createdat);
 
          // hide button
         $("#createBtn").removeClass("d-none");
@@ -160,7 +200,9 @@ if(action !== undefined) {
 }
 
 else {
-    $(".modal-title").html("Create Post");
+    $(".modal-title").html("Create Todo");
+
+    $("#createBtn").text("Save");
 
     // pass data to input fields
     $("#title").removeAttr("readonly");
@@ -168,6 +210,15 @@ else {
 
     $("#description").removeAttr("readonly");
     $("#description").val("");
+
+    $("#category").removeAttr("readonly");
+    $("#category").val("");
+
+    $("#duration").removeAttr("readonly");
+    $("#duration").val("");
+
+    $("#createdat").removeAttr("readonly");
+    $("#createdat").val("");
 
     // hide button
     $("#createBtn").removeClass("d-none");

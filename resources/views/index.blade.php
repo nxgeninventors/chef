@@ -24,8 +24,11 @@
 <table class="table table-striped mt-4">
     <thead>
         <th> Id </th>
-        <th> Title </th>
+        <th> Task Title </th>
         <th> Description </th>
+        <th> Category </th>
+        <th> Duration </th>
+        <th> Created At </th>
         <th> Action </th>
     </thead>
 
@@ -35,10 +38,28 @@
                 <td> {{$post->id}} </td>
                 <td> {{$post->title}} </td>
                 <td> {{$post->description}} </td>
+                <td> {{$post->category}} </td>
+                <td> {{$post->duration}} </td>
+                <td> {{$post->createdat}} </td>
                 <td>
-                    <a href="javascript:void(0);" data-toggle="modal" data-target="#addPostModal" data-id="{{$post->id}}" data-title="{{$post->title}}" data-description="{{$post->description}}" data-action="view" class="btn btn-info btn-sm"> View </a>
-                    <a href="javascript:void(0);" data-toggle="modal" data-target="#addPostModal" data-id="{{$post->id}}" data-title="{{$post->title}}" data-description="{{$post->description}}" data-action="edit" class="btn btn-success btn-sm"> Edit </a>
-                    <a href="javascript:void(0);" onclick="deletePost({{$post->id}})" class="btn btn-danger btn-sm"> Delete </a>
+                    <a href="javascript:void(0);" data-toggle="modal" data-target="#addPostModal"
+                    data-id="{{$post->id}}" data-title="{{$post->title}}"
+                    data-description="{{$post->description}}"
+                    data-category="{{$post->category}}"
+                    data-duration="{{$post->duration}}"
+                    data-createdat="{{$post->createdat}}"
+                    data-action="view"
+                    class="btn btn-info btn-sm"> View </a>
+                    <a href="javascript:void(0);" data-toggle="modal" data-target="#addPostModal"
+                    data-id="{{$post->id}}" data-title="{{$post->title}}"
+                    data-description="{{$post->description}}"
+                    data-category="{{$post->category}}"
+                    data-duration="{{$post->duration}}"
+                    data-createdat="{{$post->createdat}}"
+                    data-action="edit" 
+                    class="btn btn-success btn-sm"> Edit </a>
+                    <a href="javascript:void(0);" onclick="deletePost({{$post->id}})" 
+                    class="btn btn-danger btn-sm"> Delete </a>
                 </td>
             </tr>
         @endforeach
@@ -52,7 +73,7 @@
 
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="addPostModalLabel"> Create Post </h5>
+          <h5 class="modal-title" id="addPostModalLabel"> Create Task </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true"> × </span>
           </button>
@@ -63,13 +84,31 @@
                 {{-- @csrf --}}
                 <input type="hidden" id="id_hidden" name="id" />
                 <div class="form-group">
-                    <label for="title"> Title <span class="text-danger">*</span></label>
+                    <label for="title"> Task Title <span class="text-danger">*</span></label>
                     <input type="text" name="title" id="title" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label for="title"> Description <span class="text-danger">*</span></label>
+                    <label for="description"> Description <span class="text-danger">*</span></label>
                     <textarea name="description" id="description" class="form-control"></textarea>
+                </div>
+
+                <input type="hidden" id="id_hidden" name="id" />
+                <div class="form-group">
+                    <label for="category"> Category <span class="text-danger">*</span></label>
+                    <input type="text" name="category" id="category" class="form-control">
+                </div>
+
+                <input type="hidden" id="id_hidden" name="id" />
+                <div class="form-group">
+                    <label for="duration"> Duration <span class="text-danger">*</span></label>
+                    <input type="text" name="duration" id="duration" class="form-control">
+                </div>
+
+                <input type="hidden" id="id_hidden" name="id" />
+                <div class="form-group">
+                    <label for="createdat"> Created At <span class="text-danger">*</span></label>
+                    <input type="text" name="createdat" id="createdat" class="form-control">
                 </div>
             </form>
         </div>

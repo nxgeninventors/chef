@@ -20,16 +20,19 @@ class PostController extends Controller
         $request->validate([
             'title'         =>      'required',
             'description'   =>      'required',
+            'category'      =>      'required',
+            'duration'      =>      'required',
+            'createdat'     =>      'required'
         ]);
 
        $post            =           Post::create($request->all());
 
        if(!is_null($post)) {
-            return response()->json(["status" => "success", "message" => "Success! post created.", "data" => $post]);
+            return response()->json(["status" => "success", "message" => "Success! Task created.", "data" => $post]);
        }
 
        else {
-           return response()->json(["status" => "failed", "message" => "Alert! post not created"]);
+           return response()->json(["status" => "failed", "message" => "Alert! Task not created"]);
        }
     }
 
@@ -40,23 +43,26 @@ class PostController extends Controller
         $post           =       Post::where("id", $post_id)->update($request->all());
 
         if($post == 1) {
-            return response()->json(["status" => "success", "message" => "Success! post updated"]);
+            return response()->json(["status" => "success", "message" => "Success! Task updated"]);
         }
 
         else {
-            return response()->json(["status" => "failed", "message" => "Alert! post not updated"]);
-        }
+            return response()->json(["status" => "failed", "message" => "Alert! Task not updated"]);
+        
+         }
     }
 
 // -------------- [ Delete post ] ---------------
     public function destroy($post_id) {
         $post       =       Post::where("id", $post_id)->delete();
         if($post == 1) {
-            return response()->json(["status" => "success", "message" => "Success! post deleted"]);
+            return response()->json(["status" => "success", "message" => "Success! Task deleted"]);
         }
 
         else {
-            return response()->json(["status" => "failed", "message" => "Alert! post not deleted"]);
+            return response()->json(["status" => "failed", "message" => "Alert! Task not deleted"]);
         }
+    
     }
+
 }
