@@ -3,9 +3,11 @@ import "flowbite";
 import $ from "jquery";
 
 import ClientsCtrl from "./controllers/clients";
+import UsersCtrl from "./controllers/users";
 
 var CtrlObj = {
     ClientsCtrl,
+    UsersCtrl,
 };
 
 import Alpine from "alpinejs";
