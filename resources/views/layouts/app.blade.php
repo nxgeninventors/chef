@@ -10,8 +10,15 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
+        <script>
+            window._token = "{{ csrf_token() }}";
+            window.RECORD_LIMIT = "{{ env('RECORD_LIMIT') }}";
+            window.base_path = "{{ URL::to('/') }}";
+            window.api_base_path = "{{ URL::to('/') }}"+'/api';
+        </script>
+        <script src="https://use.fontawesome.com/releases/v6.2.1/js/all.js" data-auto-a11y="true" ></script>
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.scss', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased dark:bg-gray-900">
         <div class="min-h-screen">

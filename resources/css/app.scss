@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.odd-row {
+    @apply bg-gray-100 border-b hover:bg-gray-800;
+}
+
+.even-row {
+    @apply bg-white border-b hover:bg-gray-800;
+}
+
+@layer components {
+    .even-row:hover td,
+    .odd-row:hover td {
+        color: #fff !important;
+    }
+}
+
+.dataTable {
+    position: relative;
+}
+
+.dataTable tbody td {
+    text-align: center;
+}
+
+.dataTable .action {
+    position: relative;
+}
+
+.text-green-500 {
+    --tw-text-opacity: 1;
+    color: rgba(16, 185, 129, var(--tw-text-opacity));
+}
+
+.text-red-500 {
+    --tw-text-opacity: 1;
+    color: rgba(239, 68, 68, var(--tw-text-opacity));
+}

@@ -35,4 +35,21 @@ class Client extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when(
+            $filters['inv_code'] ?? false,
+            fn ($query, $inv_code) =>
+            $query->where('inv_code', 'like', '%'.$inv_code.'%')
+        );
+
+        $query->when(
+            $filters['reason'] ?? false,
+            fn ($query, $reason) =>
+            $query->where('reason', 'like', '%'.$reason.'%')
+        );
+
+        $query->where('active', 1);
+    }
 }
