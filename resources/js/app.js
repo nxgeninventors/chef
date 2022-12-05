@@ -1,5 +1,12 @@
 import "./bootstrap";
 import "flowbite";
+import $ from "jquery";
+
+import ClientsCtrl from "./controllers/clients";
+
+var CtrlObj = {
+    ClientsCtrl,
+};
 
 import Alpine from "alpinejs";
 
@@ -59,4 +66,23 @@ themeToggleBtn.addEventListener("click", function () {
             localStorage.setItem("color-theme", "dark");
         }
     }
+});
+
+$(document).ready(function () {
+    // alert("ddd")
+    $(".data-ctrl").each(function () {
+        var ctrl = $(this).data("ctrl");
+        console.log(ctrl);
+        if (
+            typeof ctrl != "undefined" &&
+            ctrl != null &&
+            typeof CtrlObj[ctrl] != "undefined"
+        ) {
+            CtrlObj[ctrl]().init();
+        }
+    });
+
+    // $(".hamburger .hamburger__inner").click(function () {
+    //     $("body").toggleClass("close");
+    // });
 });
