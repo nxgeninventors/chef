@@ -15,9 +15,10 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        return view('clients.index', [
-            'clients' => DB::table('clients')->paginate(1)
-        ]);
+        return view('clients.index');
+        // return view('clients.index', [
+        //     'clients' => DB::table('clients')->paginate(1)
+        // ]);
         // return view('clients.index', [
         //     'clients' => Client::with('country')->latest()->get(),
         // ]);
