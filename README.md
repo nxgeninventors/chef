@@ -14,3 +14,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 php artisan make:controller UsersController --resource
 php artisan make:controller Api/UsersController --resource
 ```
+
+
+- https://debug.datatables.net/
+- https://cdn.datatables.net/

@@ -18,7 +18,7 @@ return new class () extends Migration {
             $table->string('last_name', 255);
             $table->foreignId('country_id')->constrained('countries');
             $table->string('email', 100)->unique();
-            $table->string('mobile', 15);
+            $table->string('mobile', 25);
             $table->text('street_address');
             $table->string('city', 150);
             $table->string('state', 150);

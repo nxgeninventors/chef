@@ -22,3 +22,16 @@ php artisan make:model -mf Expense
 php artisan migrate:rollback
 php artisan migrate
 ```
+
+
+```
+php artisan tinker
+
+use App\Models\Client;
+use App\Models\User;
+
+# Update factory files inside `database/factories`
+
+$clients = Client::factory()->count(100)->create();
+$users = User::factory()->count(100)->create();
+```

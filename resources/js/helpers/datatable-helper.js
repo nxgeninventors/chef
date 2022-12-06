@@ -1,20 +1,21 @@
+import $ from "jquery";
 import "datatables.net";
 import "datatables.net-dt";
 import "datatables.net-responsive";
 import Swal from "sweetalert2";
-import $ from "jquery";
 import HttpService from "../services/http-service";
-
+window.$ = window.jquery = $;
 import { EmptyTableResponse } from "../config/datatables";
 
 $.extend(true, $.fn.dataTable.defaults, {
+    responsive: true,
     searching: false,
     //lengthChange: false,
     serverSide: true,
     processing: true,
     //ordering: false,
     paging: true,
-    responsive: true,
+    // responsive: true,
     pageLength: window.RECORD_LIMIT,
     lengthMenu: [5, 10, 15, 20, 25, 50],
     asStripeClasses: ["odd-row", "even-row"],
