@@ -1,7 +1,7 @@
-export const ClientsConfig = {
-    url: "clients",
-    table_name: "clients_table",
-    delete_api: "/clients",
+export const PostsConfig = {
+    url: "posts",
+    table_name: "posts_table",
+    delete_api: "/posts",
     columnDefs: window.defaultColumnDefs,
     orderBy: window.orderByObj,
     edit: {
@@ -10,13 +10,11 @@ export const ClientsConfig = {
     },
     columns: [
         { data: "id", title: "ID" },
-        { data: "first_name", title: "First Name" },
-        { data: "email", title: "Email" },
-        { data: "mobile", title: "Mobile" },
-        { data: "street_address", title: "Street address " },
-        { data: "city", title: "City" },
-        { data: "state", title: "State" },
-        { data: "zip", title: "ZIP" },
+        { data: "title", title: "Title" },
+        { data: "description", title: "Description" },
+        { data: "category", title: "Category" },
+        { data: "duration", title: "Duration " },
+        { data: "createdat", title: "CreatedAt" },
         // { data: "addr", title: "Address" },
         // { data: "contact", title: "Contact" },
         // { data: "email", title: "Email" },

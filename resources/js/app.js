@@ -4,10 +4,12 @@ import $ from "jquery";
 
 import ClientsCtrl from "./controllers/clients";
 import UsersCtrl from "./controllers/users";
+import PostsCtrl from "./controllers/posts";
 
 var CtrlObj = {
     ClientsCtrl,
     UsersCtrl,
+    PostsCtrl
 };
 
 import Alpine from "alpinejs";
