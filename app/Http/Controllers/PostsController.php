@@ -10,8 +10,7 @@ class PostsController extends Controller
     // ----------- [ post listing ] -------------
     public function index()
     {
-        $posts      =       Post::latest()->paginate(5);
-        return view('posts.index', compact('posts'));
+        return view('posts.index');
     }
 
 // ------------- [ store post ] -----------------
