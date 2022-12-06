@@ -10,7 +10,7 @@ use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\TodosController;
 use App\Http\Controllers\FormsController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,21 +53,11 @@ Route::resource('users', UsersController::class)
 ->only(['index', 'store'])
 ->middleware(['auth', 'verified']);
 
-Route::get('/todos', [TodosController::class, 'index']);
-Route::post('/todos', [TodosController::class,'store']);
-Route::get('/todos/create', [TodosController::class, 'create']);
-Route::get('/todos/{id}', [TodosController::class,'show']);
-Route::get('/todos/{id}/edit', [TodosController::class, 'edit']);
-Route::post('/todos/{id}', [TodosController::class, 'update']);
-Route::get('/todos/{id}', [TodosController::class, 'destroy']);
-
+Route::resource('posts', PostsController::class)
+->only(['index', 'store'])
+->middleware(['auth', 'verified']);
 
 Route::get('/forms', [FormsController::class, 'index']);
 Route::get('/dash', [FormsController::class, 'dash']);
-
-Route::get('posts', [PostController::class, 'index']);
-Route::post('post', [PostController::class, 'store']);
-Route::put('post', [PostController::class, 'update']);
-Route::delete('post/{post_id}', [PostController::class, 'destroy']);
 
 require __DIR__.'/auth.php';

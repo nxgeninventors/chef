@@ -93,19 +93,18 @@
                     <textarea name="description" id="description" class="form-control"></textarea>
                 </div>
 
-                <input type="hidden" id="id_hidden" name="id" />
                 <div class="form-group">
                     <label for="category"> Category <span class="text-danger">*</span></label>
                     <input type="text" name="category" id="category" class="form-control">
                 </div>
 
-                <input type="hidden" id="id_hidden" name="id" />
+          
                 <div class="form-group">
                     <label for="duration"> Duration <span class="text-danger">*</span></label>
                     <input type="text" name="duration" id="duration" class="form-control">
                 </div>
 
-                <input type="hidden" id="id_hidden" name="id" />
+                
                 <div class="form-group">
                     <label for="createdat"> Created At <span class="text-danger">*</span></label>
                     <input type="text" name="createdat" id="createdat" class="form-control">

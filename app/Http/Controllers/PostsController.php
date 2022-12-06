@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class PostsController extends Controller
 {
     // ----------- [ post listing ] -------------
     public function index()
     {
         $posts      =       Post::latest()->paginate(5);
-        return view('index', compact('posts'));
+        return view('posts.index', compact('posts'));
     }
 
 // ------------- [ store post ] -----------------
