@@ -8,7 +8,8 @@
                 style="width:100%; padding-top: 1em;  padding-bottom: 1em;"
             >
             </table> --}}
-            <table class="table-auto min-w-full" id="clients_table">
+            {{-- <table style="width: 100%; overflow: hidden" class="table-auto min-w-full" id="clients_table"> --}}
+            <table style="width: 100%; overflow: hidden" id="clients_table">
             </table>
             {{-- <table class="min-w-full leading-normal">
                 <thead>

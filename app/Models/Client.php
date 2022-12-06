@@ -15,18 +15,17 @@ class Client extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'mobile',
-        'address_1',
-        'address_2',
+        'street_address',
         'city',
         'state',
         'zip',
         'country_id',
         'phone',
     ];
-
 
     /**
      * Get the post that owns the comment.
