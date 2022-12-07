@@ -8,9 +8,9 @@ use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\TodosController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ProjectsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +54,10 @@ Route::resource('users', UsersController::class)
 ->middleware(['auth', 'verified']);
 
 Route::resource('posts', PostsController::class)
+->only(['index', 'store'])
+->middleware(['auth', 'verified']);
+
+Route::resource('projects', ProjectsController::class)
 ->only(['index', 'store'])
 ->middleware(['auth', 'verified']);
 

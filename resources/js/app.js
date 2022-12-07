@@ -5,11 +5,13 @@ import $ from "jquery";
 import ClientsCtrl from "./controllers/clients";
 import UsersCtrl from "./controllers/users";
 import PostsCtrl from "./controllers/posts";
+import ProjectsCtrl from "./controllers/projects";
 
 var CtrlObj = {
     ClientsCtrl,
     UsersCtrl,
-    PostsCtrl
+    PostsCtrl,
+    ProjectsCtrl
 };
 
 import Alpine from "alpinejs";

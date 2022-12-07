@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ClientsController;
 use App\Http\Controllers\Api\UsersController;
 use App\Http\Controllers\Api\PostsController;
+use App\Http\Controllers\Api\ProjectsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('clients', [ClientsController::class, 'index']);
 Route::get('users', [UsersController::class, 'index']);
 Route::get('posts', [PostsController::class, 'index']);
+Route::get('projects', [ProjectsController::class, 'index']);
