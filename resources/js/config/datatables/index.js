@@ -21,3 +21,4 @@ export const EmptyTableResponse = {
 export { ClientsConfig } from "./clients";
 export { UsersConfig } from "./users";
 export { PostsConfig } from "./posts";
+export { ProjectsConfig } from "./projects";
